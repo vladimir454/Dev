@@ -7,7 +7,6 @@ class text_processor
 { 
     
     const char* texto;
-    char* text = new char[2000];
 
 public:
 

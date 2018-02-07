@@ -5,19 +5,22 @@
 #include <algorithm>
 #include <memory>
 #include <unordered_map>
+#include <cstring>
 
 // Implementarlo a manera de mapa en C++:
 using namespace std;
 
 
 struct IterateTrie{
-    char str;
-    map<char, IterateTrie*> children;
+  
+  IterateTrie()
+  {}
 };
 using iterator = IterateTrie;
 
 template <typename T>
 class trie
+
 {   
  map<T, trie> tries;
    
@@ -33,19 +36,15 @@ public:
   }
   T& operator[](const string& key) //if does not find it, creates it.
   {
-
+   return (*find(key)).sencond;
   }
   iterator find(const string& key)
   {
-    if(*key==0)
-    {
-
-    }
-   
+    size_t ad = key;
   }
   iterator begin()
   {
-
+    
   }
   iterator end()
   {
@@ -78,14 +77,14 @@ int main()
     else 
         cout << it->second << "\n";
 
-//   //should iterate diez, dieciocho and diecinueve
-//   s.iterate_by_prefix("die", [](auto& p)
-//   {
-//     cout << "Key: " << p.first << "; Value: " << p.second << "\n";
-//   });
+  //should iterate diez, dieciocho and diecinueve
+  s.iterate_by_prefix("die", [](auto& p)
+  {
+    cout << "Key: " << p.first << "; Value: " << p.second << "\n";
+  });
 
-//   cout << "****\n";
+  cout << "****\n";
 
-//   // should get all items as pairs
-//   for (auto& i : s) { cout << i.second  << "\n"; }
+  // should get all items as pairs
+  for (auto& i : s) { cout << i.second  << "\n"; }
 }
